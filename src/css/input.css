@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*-------------------------------------------------------------- # Base Section Start--------------------------------------------------------------*/
+:root {
+  --main-bg-color: #000;
+  --accent-bg-color: #fff;
+}
+
+html * {
+  text-align: center;
+  font-family: 'Share-TechMono', 'Ubuntu Mono', 'Helvetica Neue', sans-serif !important;
+  background: var(--main-bg-color);
+  color: var(--accent-bg-color);
+  font-size: 16px;
+}
+
+html body {
+  display: block;
+  margin: 0px;
+  height: 100vh;
+}
+
+.section-container {
+  margin: auto;
+  padding: 2vh 5vw;
+}
+
+@media (min-width: 1200px) {
+  .section-container {
+    padding: 2% 25%;
+  }
+
+  .section-container-desk-wide {
+    padding: 2% 10% !important;
+  }
+}
+
+.air {
+  height: min(16vh, 4rem);
+}
+
+html .h-screen {
+  height: clamp(85dvh, 85dvh, 250vh);
+}
+
+/* General Section */
+
+html .hidden {
+  display: none !important;
+}
+
+@media (min-width: 1200px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2 {
+  text-transform: capitalize;
+  text-align: center;
+  font-size: min(7.5vw, 2.5rem);
+  margin: min(2vh, 0.5rem) 0;
+  font-weight: 800;
+}
+
+h3,
+h4 {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: min(6vw, 2rem);
+  font-weight: 600;
+}
+
+h5,
+h6,
+p {
+  font-size: min(3vw, 1rem);
+  text-align: left;
+  font-weight: 400;
+  margin-top: min(3vw, 1rem);
+}
+
+h1,
+h3,
+h5,
+p {
+  font-style: normal;
+}
+
+h2,
+h4,
+h6 {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Main Section */
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+#main #logo img {
+  width: min(90vw, 30rem);
+}
+
+#main #scroll-down {
+  width: min(45vw, 15rem);
+  bottom: 2%;
+  position: absolute;
+}
+
+#main #vl-container {
+  margin: min(8vh, 2rem) 0;
+}
+
+#main #vl-container .vl {
+  text-align: center;
+  border-left: min(0.4vh, 0.1rem) solid #0a0c1f;
+  height: min(40vh, 10rem);
+  display: flex;
+  justify-content: center;
+}
+
+#main h1,
+#main h3 {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#main h1 {
+  font-size: min(12vw, 4rem);
+  font-weight: 1000;
+  letter-spacing: min(0.12vw, 0.4rem);
+}
+
+#main h3 {
+  letter-spacing: min(3vw, 1rem);
+  text-shadow: 0px min(0.16vh, 0.04rem) min(0.16vh, 0.04rem) rgba(0, 0, 0, 0.25);
+}
+
+#main h4 {
+  letter-spacing: min(0.6vw, 0.2rem);
+}
+
+/*-------------------------------------------------------------- # Air Section --------------------------------------------------------------*/
+
+#air-top,
+#air-bot {
+  padding: 1vh 0;
+}
+
+/*-------------------------------------------------------------- # Main Menu Section --------------------------------------------------------------*/
+
+/* Style the labels within the options-container */
+.options-container label {
+  display: block;
+  font-size: min(3vw, 1rem);
+  font-weight: 600;
+  margin-top: min(6vw, 2rem);
+}
+
+/* Style the select elements within the options-container */
+.options-container select,
+.options-container input {
+  width: 42%;
+  text-align: center;
+  padding: min(1.5vw, 0.5rem);
+  border: 2px solid var(--accent-bg-color);
+  margin: min(1.5vw, 0.5rem);
+  font-size: min(3vw, 1rem);
+}
+
+/*-------------------------------------------------------------- # Results Section --------------------------------------------------------------*/
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
+
+#results #rule-container {
+  position: relative;
+  overflow: auto;
+}
+#results,
+#rules,
+#rule-container {
+  padding: 2vh 5vw;
+}
+
+#rules p {
+  text-align: justify;
+}
+
+html .blur {
+  -webkit-filter: brightness(4%) blur(0.5em);
+  filter: brightness(4%) blur(0.5em);
+  position: relative;
+}
+
+.skill-card-con,
+.explore-card-con,
+.goal-card-con {
+  padding: min(1vw, 0.67rem);
+  max-width: min(35vw, 16em);
+}
+
+/*-------------------------------------------------------------- # Buttons Section --------------------------------------------------------------*/
+#buttons-top,
+#buttons-bot {
+  padding: 4vh 5vw;
+}
+
+.btn-black {
+  background-color: var(--main-bg-color);
+  padding: min(1.5vw, 0.5rem) min(4.5vw, 1.5rem);
+  margin: min(3vw, 1rem);
+  border: 2px solid var(--accent-bg-color);
+  font-size: min(3vw, 1rem);
+}
+
+/* Style the buttons on hover */
+.btn-black:hover {
+  background-color: var(--accent-bg-color);
+  color: var(--main-bg-color);
+}
+
+#roll-dice,
+#reset {
+  width: 45%;
+  display: inline-block;
+}
