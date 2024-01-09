@@ -61,8 +61,12 @@ function getInputElementValue(id) {
     }
 }
 function shuffleArray(array) {
+    const gameSettings = JSON.parse(localStorage.getItem('gameSettings') || 'null') || setupGame();
+    let gameSeed = calculateSeed(gameSettings.seed);
+    gameSettings.seed = getNextSeed(gameSeed);
+    localStorage.setItem('gameSettings', JSON.stringify(gameSettings));
     for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+        const j = Math.floor(seededRandom(gameSeed) * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;

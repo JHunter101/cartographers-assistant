@@ -58,11 +58,8 @@ function drawCard() {
     }
     gameProgress = refillMarket('skill', gameProgress.skillDeck, gameProgress.skillMarket, 3);
     gameProgress = refillMarket('explore', gameProgress.exploreDeck, [], -1);
-    console.log(gameProgress.season);
     const seasonDisplaySeason = document.getElementById('season-display-season');
     seasonDisplaySeason.innerText = String(seasonData[gameProgress.season].name);
-    console.log(gameProgress.seasonProg);
-    console.log(gameProgress.seasonMax);
     const seasonDisplayProg = document.getElementById('season-display-prog');
     seasonDisplayProg.innerText = `${gameProgress.seasonProg} / ${gameProgress.seasonMax}`;
     localStorage.setItem('gameProgress', JSON.stringify(gameProgress));

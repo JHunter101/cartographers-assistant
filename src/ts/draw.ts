@@ -88,6 +88,7 @@ function drawCard(): void {
     'season-display-season',
   ) as HTMLInputElement;
   seasonDisplaySeason.innerText = String(seasonData[gameProgress.season].name);
+
   const seasonDisplayProg = document.getElementById(
     'season-display-prog',
   ) as HTMLInputElement;
