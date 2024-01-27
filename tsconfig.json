@@ -18,6 +18,6 @@
     "allowSyntheticDefaultImports": true,
     "outDir": "dist"
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "dep/**/*.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

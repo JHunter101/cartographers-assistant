@@ -1,0 +1,148 @@
+:root {
+  --main-bg-color: #000;
+  --accent-bg-color: #fff;
+}
+
+html * {
+  text-align: center;
+  font-family: 'Share-TechMono', 'Ubuntu Mono', 'Helvetica Neue', sans-serif !important;
+  background: var(--main-bg-color);
+  color: var(--accent-bg-color);
+  font-size: 16px;
+}
+
+html body {
+  display: block;
+  margin: 0px;
+  height: clamp(100dvh, 100dvh, 250vh);
+}
+
+html .hidden {
+  display: none !important;
+}
+
+@media (min-width: 1200px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
+
+/**/
+h1,
+h2 {
+  text-transform: capitalize;
+  font-size: min(7.5vw, 2.5rem);
+  margin: min(6vw, 2rem) 0;
+  font-weight: 800;
+}
+
+/**/
+h3,
+h4 {
+  text-transform: capitalize;
+  margin-top: min(6vw, 2rem);
+  font-size: min(6vw, 2rem);
+  font-weight: 600;
+}
+
+/**/
+h5,
+h6,
+p {
+  margin-top: min(3vw, 1rem);
+  font-size: min(3vw, 1rem);
+  font-weight: 400;
+}
+
+/**/
+h1,
+h3,
+h5 {
+  font-style: normal;
+  text-align: center;
+}
+
+/**/
+h2,
+h4,
+h6,
+p {
+  font-style: normal;
+  text-align: left;
+}
+
+/*-------------------------------------------------------------- # Basic Shapes Section Start--------------------------------------------------------------*/
+.container,
+.section-container,
+.section-container-desk-wide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section-container,
+.section-container-desk-wide {
+  margin: auto;
+  padding: 2vh 5vw;
+}
+
+@media (min-width: 1200px) {
+  .section-container {
+    padding: 2vh 25vw;
+  }
+}
+
+.air {
+  height: min(16vh, 4rem);
+}
+
+/*-------------------------------------------------------------- # Input & Buttons Section Start--------------------------------------------------------------*/
+
+/* Style the labels within the options-container */
+.options-container label {
+  display: block;
+  margin-top: min(6vw, 2rem);
+  font-size: min(3vw, 1rem);
+  font-weight: 600;
+}
+
+/* Style the select elements within the options-container */
+.options-container select,
+.options-container input {
+  border: 2px solid var(--accent-bg-color);
+  padding: min(1.5vw, 0.5rem);
+  margin: min(1.5vw, 0.5rem);
+  text-align: center;
+  font-size: min(3vw, 1rem);
+}
+
+/*-------------------------------------------------------------- # Buttons Section --------------------------------------------------------------*/
+#buttons-top,
+#buttons-bot {
+  padding: 4vh 5vw;
+}
+
+.btn-black {
+  background-color: var(--main-bg-color);
+  padding: min(1.5vw, 0.5rem) min(4.5vw, 1.5rem);
+  margin: min(3vw, 1rem);
+  border: 2px solid var(--accent-bg-color);
+  font-size: min(3vw, 1rem);
+}
+
+/* Style the buttons on hover */
+.btn-black:hover {
+  background-color: var(--accent-bg-color);
+  color: var(--main-bg-color);
+}

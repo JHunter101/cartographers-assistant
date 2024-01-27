@@ -3,10 +3,17 @@
   <head>
     <title>Cartographers Assistant</title>
     <link rel="stylesheet" type="text/css" href="dist/css/output.css" />
-    <script src="dist/basic.js"></script>
-    <script src="dist/setup.js"></script>
-    <script src="dist/draw.js"></script>
-    <script src="dist/cookies.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="dep/fractal-api-v1.0.1/css/fractal-css.css"
+    />
+    <script src="dist/dep/fractal-api-v1.0.1/ts/basic.js"></script>
+    <script src="dist/dep/fractal-api-v1.0.1/ts/cookies.js"></script>
+    <script src="dist/dep/fractal-api-v1.0.1/ts/random.js"></script>
+    <script src="dist/dep/fractal-api-v1.0.1/ts/seed.js"></script>
+    <script src="dist/src/ts/setup.js"></script>
+    <script src="dist/src/ts/draw.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -60,16 +67,6 @@
         <div id="main-menu-settings">
           <div class="options-container wow fadeIn">
             <form id="">
-              <label>Select Ruleset:</label>
-              <select id="rules-setting">
-                <option value="vanilla" disabled>
-                  Vanilla Cartographers (NYI)
-                </option>
-                <option value="vanilla-heroes" disabled>
-                  Vanilla Heroes (NYI)
-                </option>
-                <option value="houseruled" selected>Houseruled</option>
-              </select>
               <label>Skill Cards:</label>
               <select id="skill-setting">
                 <option value="disabled" selected>Skills Disabled</option>
@@ -140,13 +137,11 @@
             id="season-display"
             class="flex flex-col justify-center items-center"
           >
-            <h1 id="season-display-season"></h1>
+            <h3 id="season-display-season"></h3>
             <h3 id="season-display-prog"></h3>
+            <h3 id="season-display-addition"></h3>
           </div>
-          <div
-            id="explore-display"
-            class="flex flex-row justify-center items-center"
-          ></div>
+          <div id="explore-display" class="justify-center items-center"></div>
         </div>
       </section>
     </div>
