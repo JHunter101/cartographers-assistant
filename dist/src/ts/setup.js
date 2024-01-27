@@ -102,14 +102,12 @@ function setupGame() {
     return gameSettings;
 }
 function restart() {
+    clearBox('rule-container');
+    clearBox('goal-display');
     clearBox('skill-display');
     clearBox('explore-display');
-    clearBox('goal-display');
-    clearBox('season-display-season');
-    clearBox('season-display-prog');
-    clearBox('rule-container');
     hide_elem('rules');
-    hide_elem('rule-container');
+    hide_elem('results');
     unhide_elem('main-menu');
     localStorage.clear();
 }

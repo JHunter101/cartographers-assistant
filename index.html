@@ -37,6 +37,7 @@
           class="btn-black roll-dice"
           onclick="drawCard(); 
           hide_elem('main-menu');
+          unhide_elem('results');
           saveProgress();"
           >Draw Card
         </a>
@@ -52,8 +53,8 @@
           href="#buttons-top"
           class="btn-black reset"
           onclick="
-        clearLocalStorage();
-        saveProgress();"
+          clearLocalStorage();
+          saveProgress();"
           >Reset
         </a>
       </section>
@@ -123,7 +124,7 @@
         </a>
         <div id="rule-container" class="hidden"></div>
       </section>
-      <section id="results">
+      <section id="results" class="hidden">
         <div id="resCon" class="flex flex-col justify-center items-center">
           <div
             id="goal-display"
