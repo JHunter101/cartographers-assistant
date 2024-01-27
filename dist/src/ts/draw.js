@@ -97,7 +97,8 @@ function createExploreCard() {
             isCoined = [false, true];
         }
         else if (isRuined[0]) {
-            isCoined = [true, false];
+            isRuined = [true, false];
+            isCoined = [false, false];
         }
         else {
             isCoined = [false, true];

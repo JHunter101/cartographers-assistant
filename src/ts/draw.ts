@@ -119,8 +119,8 @@ function createExploreCard(): {
 
   const shapeSize = Math.ceil(seededRandom() * 6);
   exploreData['time'] = Math.floor(shapeSize / 2);
-  const choiceTypeCount = seededRandom() < 0.65 ? 1 : 2;
-  const choiceSizeCount = shapeSize === 1 ? 1 : seededRandom() < 0.65 ? 1 : 2;
+  const choiceTypeCount = seededRandom() < 0.75 ? 1 : 2;
+  const choiceSizeCount = shapeSize === 1 ? 1 : seededRandom() < 0.75 ? 1 : 2;
 
   for (let i = 0; i < choiceSizeCount; i++) {
     exploreData['shapes'] = exploreData['shapes'].concat([
@@ -145,7 +145,8 @@ function createExploreCard(): {
     if (isCoined[0]) {
       isCoined = [false, true];
     } else if (isRuined[0]) {
-      isCoined = [true, false];
+      isRuined = [true, false];
+      isCoined = [false, false];
     } else {
       isCoined = [false, true];
     }
