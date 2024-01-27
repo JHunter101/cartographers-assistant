@@ -81,8 +81,8 @@ function createExploreCard() {
     };
     const shapeSize = Math.ceil(seededRandom() * 6);
     exploreData['time'] = Math.floor(shapeSize / 2);
-    const choiceTypeCount = seededRandom() < 0.65 ? 1 : 2;
-    const choiceSizeCount = shapeSize === 1 ? 1 : seededRandom() < 0.65 ? 1 : 2;
+    const choiceTypeCount = seededRandom() < 0.75 ? 1 : 2;
+    const choiceSizeCount = shapeSize === 1 ? 1 : seededRandom() < 0.75 ? 1 : 2;
     for (let i = 0; i < choiceSizeCount; i++) {
         exploreData['shapes'] = exploreData['shapes'].concat([
             createShape(Math.floor(shapeSize / (i + 1))),

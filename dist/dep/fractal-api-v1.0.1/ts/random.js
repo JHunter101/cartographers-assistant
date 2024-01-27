@@ -1,4 +1,11 @@
 "use strict";
+function randItem(myList) {
+    if (myList.length === 0) {
+        return '';
+    }
+    const value = myList[Math.floor(seededRandom() * myList.length)];
+    return value;
+}
 function shuffleList(myList) {
     for (let i = myList.length - 1; i > 0; i--) {
         const j = randItem([...Array(i + 1).keys()]);
@@ -13,12 +20,4 @@ function randUniqueItems(myList, amount) {
     }
     myList = myList.slice(0, amount);
     return myList;
-}
-function randItem(myList) {
-    if (myList.length === 0) {
-        return '';
-    }
-    const gameSeed = getStoredSeed();
-    const value = myList[Math.floor(seededRandom(gameSeed) * myList.length)];
-    return value;
 }

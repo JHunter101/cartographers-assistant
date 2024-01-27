@@ -89,6 +89,7 @@ function setupRules(gameSettings) {
     };
 }
 function setupGame() {
+    seededRandom(calculateSeed(getInputElementValue('game-seed')));
     const gameSettings = resetGameSettings();
     gameSettings.newGame = false;
     gameSettings.skillsSetting = getInputElementValue('skill-setting');
@@ -98,7 +99,6 @@ function setupGame() {
     localStorage.setItem('gameSettings', JSON.stringify(gameSettings));
     const gameProgress = setupRules(gameSettings);
     localStorage.setItem('gameProgress', JSON.stringify(gameProgress));
-    seededRandom(calculateSeed(getInputElementValue('game-seed')));
     return gameSettings;
 }
 function restart() {
