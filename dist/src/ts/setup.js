@@ -57,9 +57,6 @@ const cardDatabase = {
 function resetGameSettings() {
     return {
         newGame: true,
-        skillsSetting: 'disabled',
-        ambushSetting: 'disabled',
-        heroesSetting: 'disabled',
         mapPack: 'base',
     };
 }
@@ -92,9 +89,6 @@ function setupGame() {
     seededRandom(calculateSeed(getInputElementValue('game-seed')));
     const gameSettings = resetGameSettings();
     gameSettings.newGame = false;
-    gameSettings.skillsSetting = getInputElementValue('skill-setting');
-    gameSettings.ambushSetting = getInputElementValue('ambush-setting');
-    gameSettings.heroesSetting = getInputElementValue('hero-setting');
     gameSettings.mapPack = getInputElementValue('map-pack');
     localStorage.setItem('gameSettings', JSON.stringify(gameSettings));
     const gameProgress = setupRules(gameSettings);
@@ -113,9 +107,6 @@ function restart() {
 }
 function clearLocalStorage() {
     restart();
-    const skillsSetting = (document.getElementById('skill-setting').value = 'disabled');
-    const ambushSetting = (document.getElementById('ambush-setting').value = 'disabled');
-    const heroesSetting = (document.getElementById('hero-setting').value = 'disabled');
     const mapPack = (document.getElementById('map-pack').value = 'base');
     const gameSeed = (document.getElementById('game-seed').value = '');
 }

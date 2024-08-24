@@ -2,12 +2,8 @@
 <html>
   <head>
     <title>Cartographers Assistant</title>
+		<link rel="stylesheet" type="text/css" href="dep/fractal-api-v1.0.1/css/fractal-css.css" />
     <link rel="stylesheet" type="text/css" href="dist/css/output.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="dep/fractal-api-v1.0.1/css/fractal-css.css"
-    />
     <script src="dist/dep/fractal-api-v1.0.1/ts/basic.js"></script>
     <script src="dist/dep/fractal-api-v1.0.1/ts/cookies.js"></script>
     <script src="dist/dep/fractal-api-v1.0.1/ts/random.js"></script>
@@ -30,20 +26,19 @@
   </head>
 
   <body>
-    <div class="flex flex-col h-screen">
-      <section id="buttons-top" class="">
+    <main class="section--fill-height">
+      <section class="section-container section-tuck flex-container-row flex-gap--medium">
         <a
           href="#buttons-top"
-          class="btn-black roll-dice"
-          onclick="drawCard(); 
-          hide_elem('main-menu');
-          unhide_elem('results');
+          class="btn-medium btn-main reset"
+          onclick="
+          clearLocalStorage();
           saveProgress();"
-          >Draw Card
+          >Reset
         </a>
         <a
           href="#buttons-top"
-          class="btn-black reset"
+          class="btn-medium btn-main reset"
           onclick="
           restart();
           saveProgress();"
@@ -51,38 +46,23 @@
         </a>
         <a
           href="#buttons-top"
-          class="btn-black reset"
-          onclick="
-          clearLocalStorage();
+          class="btn-medium btn-main roll-dice"
+          onclick="drawCard(); 
+          hide_elem('main-menu');
+          unhide_elem('results');
           saveProgress();"
-          >Reset
+          >Draw Card
         </a>
       </section>
-      <section id="main-menu" class="section-container">
-        <div id="main-menu-message">
-          <h1>Cartographers Assistant</h1>
-          <h3>By Jack Chen</h3>
-          <p></p>
+      <section id="main-menu" class="section-container section-tuck flex-gap--medium">
+        <div id="main-menu-message" class="w100">
+          <h1 class='title'>Cartographers Assistant</h1>
+          <h3 class='header--large'>By Jack Chen</h3>
+          <p>This HTML/CSS web program is intended to be used in conjunction with the popular board game Cartographers. Cartographers Assistant is your essential game companion, enhancing your Cartographers experience by serving as a portable database. Seamlessly integrated into gameplay, after a convenient setup, it automates card drawing and is able to quickly display relevant rule references. All you need is your game pads and pencils.</p>
           <p></p>
         </div>
-        <div id="main-menu-settings">
-          <div class="options-container wow fadeIn">
-            <form id="">
-              <label>Skill Cards:</label>
-              <select id="skill-setting">
-                <option value="disabled" selected>Skills Disabled</option>
-                <option value="enabled" disabled>Skills Enabled (NYI)</option>
-              </select>
-              <label>Ambush and Heroes:</label>
-              <select id="ambush-setting">
-                <option value="disabled" selected>Ambushes Disabled</option>
-                <option value="enabled" disabled>Ambushes Enabled (NYI)</option>
-              </select>
-              <select id="hero-setting">
-                <option value="disabled" selected>Heroes Disabled</option>
-                <option value="enabled" disabled>Heroes Enabled (NYI)</option>
-              </select>
-              <label>Map Pack:</label>
+        <div id="main-menu-settings" class="w100">
+            <form class="options-container flex-gap--medium">
               <select id="map-pack">
                 <option value="base" selected>Base</option>
                 <option value="mp1" disabled>
@@ -98,18 +78,15 @@
                   Map Pack 4 – Frozen Expanse: Realm of Frost Giants
                 </option>
                 <option value="mp5" disabled>
-                  Map Pack 5 – Kethra's Steppe: Redtooth \& Goldbelly
+                  Map Pack 5 – Kethra's Steppe: Redtooth & Goldbelly
                 </option>
                 <option value="mp6" disabled>
                   Map Pack 6 – Hornhelm: Wasteland Market
                 </option>
               </select>
-
-              <label>Game Seed:</label>
-              <input id="game-seed" type="text" value="" />
+              <input id="game-seed" type="text" placeholder="Game Seed" value="" />
             </form>
           </div>
-        </div>
       </section>
       <section id="game-skills"></section>
       <section id="rules" class="hidden">
@@ -125,26 +102,26 @@
         <div id="rule-container" class="hidden"></div>
       </section>
       <section id="results" class="hidden">
-        <div id="resCon" class="flex flex-col justify-center items-center">
-          <div
-            id="goal-display"
-            class="flex flex-row justify-center items-center flex-wrap"
-          ></div>
-          <div
-            id="skill-display"
-            class="flex flex-row justify-center items-center"
-          ></div>
+        <div id="resCon" class="flex-container flex-container-col justify-center items-center">
           <div
             id="season-display"
-            class="flex flex-col justify-center items-center"
+            class="flex-container flex-container-row flex-gap--small justify-center items-center"
           >
-            <h3 id="season-display-season"></h3>
-            <h3 id="season-display-prog"></h3>
-            <h3 id="season-display-addition"></h3>
+            <h3 id="season-display-season" class='header--large'></h3>
+            <h3 id="season-display-prog" class='header--medium'></h3>
+            <h3 id="season-display-addition" class='header--medium'></h3>
           </div>
           <div id="explore-display" class="justify-center items-center"></div>
         </div>
+        <div
+        id="goal-display"
+        class="flex-container flex-container-row justify-center items-center flex-wrap"
+      ></div>
+      <div
+        id="skill-display"
+        class="flex-container flex-container-row justify-center items-center"
+      ></div>
       </section>
-    </div>
+    </main>
   </body>
 </html>

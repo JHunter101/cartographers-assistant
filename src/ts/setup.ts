@@ -70,9 +70,6 @@ const cardDatabase: gameResDataType = {
 
 type GameSettings = {
   newGame: boolean;
-  skillsSetting: string;
-  ambushSetting: string;
-  heroesSetting: string;
   mapPack: string;
 };
 
@@ -90,9 +87,6 @@ type GameProgress = {
 function resetGameSettings(): GameSettings {
   return {
     newGame: true,
-    skillsSetting: 'disabled',
-    ambushSetting: 'disabled',
-    heroesSetting: 'disabled',
     mapPack: 'base',
   };
 }
@@ -130,9 +124,6 @@ function setupGame(): GameSettings {
 
   const gameSettings = resetGameSettings();
   gameSettings.newGame = false;
-  gameSettings.skillsSetting = getInputElementValue('skill-setting');
-  gameSettings.ambushSetting = getInputElementValue('ambush-setting');
-  gameSettings.heroesSetting = getInputElementValue('hero-setting');
   gameSettings.mapPack = getInputElementValue('map-pack');
   localStorage.setItem('gameSettings', JSON.stringify(gameSettings));
 
@@ -155,18 +146,6 @@ function restart(): void {
 
 function clearLocalStorage(): void {
   restart();
-  const skillsSetting = ((
-    document.getElementById('skill-setting') as HTMLInputElement
-  ).value = 'disabled');
-
-  const ambushSetting = ((
-    document.getElementById('ambush-setting') as HTMLInputElement
-  ).value = 'disabled');
-
-  const heroesSetting = ((
-    document.getElementById('hero-setting') as HTMLInputElement
-  ).value = 'disabled');
-
   const mapPack = ((
     document.getElementById('map-pack') as HTMLInputElement
   ).value = 'base');

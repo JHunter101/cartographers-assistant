@@ -21,3 +21,24 @@ function randUniqueItems(myList, amount) {
     myList = myList.slice(0, amount);
     return myList;
 }
+function weightedRandom(tableData) {
+    const value = Math.floor(seededRandom() * tableData.slices);
+    return tableData.table[value];
+}
+function weightedRandomTable(myList) {
+    const slices = smallestCommonDenominator(myList.map((x) => x.weight));
+    const table = {};
+    let j = 0;
+    for (let i = 0; i < myList.length; i++) {
+        const sliceSize = myList[i].weight * slices;
+        for (let k = 0; k < sliceSize; k++) {
+            j += 1;
+            table[j] = myList[i];
+        }
+    }
+    const tableData = {
+        slices: slices,
+        table: table,
+    };
+    return tableData;
+}
